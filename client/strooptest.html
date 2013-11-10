@@ -1,0 +1,56 @@
+<head>
+  <title>strooptest</title>
+</head>
+
+<template name="theLayout">
+    <div class="container">
+        <div class="hero-unit">
+        {{yield}}
+        </div>
+    </div>
+</template>
+
+<template name="task">
+    {{> colorByButton}}
+</template>
+
+<template name="nameByKey">
+    <h1>Press the first letter of the word's name.</h1>
+
+    {{> renderChoices}}
+</template>
+
+<template name="colorByKey">
+    <h1>Press the first letter of the word's color.</h1>
+</template>
+
+<template name="nameByButton">
+    <h1>Push the button for the word's name.</h1>
+
+    {{> renderChoices}}
+    {{> buttons}}
+</template>
+
+<template name="colorByButton">
+    <h1>Push the button for the word's color.</h1>
+
+    {{> renderChoices}}
+    {{> buttons}}
+</template>
+
+<template name="renderChoices">
+    <h1 style="color: {{color}}">{{text}}</h1>
+</template>
+
+<template name="buttons">
+    {{#each colors}}
+        <button class="btn btn-xlarge">{{name}}</button>
+    {{/each}}
+</template>
+
+<template name="buttonsColors">
+    {{#each colors}}
+    <button class="" style="background-color: {{hex}}; color: #FFFFFF">CLICKME</button>
+    {{/each}}
+</template>
+
